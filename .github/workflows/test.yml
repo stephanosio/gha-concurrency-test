@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request_target:
+    branches: [ master ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print context variables
+      run: |
+        echo "ref = ${{ github.ref }}"
+        echo "base_ref = ${{ github.base_ref }}"
+        echo "head_ref = ${{ github.head_ref }}"
